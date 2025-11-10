@@ -1,0 +1,336 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rise & Ring Boxing Club</title>
+  <meta name="description" content="Rise & Ring - community boxing programs, events, and registrations." />
+  <!--
+    Instructions:
+    1) Save this file as index.html in your Visual Studio project (or any folder).
+    2) Open with Visual Studio / Visual Studio Code. If using VS Code, right-click -> Open with Live Server, or open index.html in browser.
+    3) To convert to multi-file site or server-side framework later (ASP.NET, Node), split sections into separate views.
+  -->
+  <style>
+    /* Simple modern styling - feel free to customize */
+    :root{--accent:#d32f2f;--dark:#111827;--muted:#6b7280;--glass:rgba(255,255,255,0.06)}
+    *{box-sizing:border-box}
+    body{font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;line-height:1.5;margin:0;color:var(--dark);background:linear-gradient(180deg,#f8fafc 0%, #eef2f7 100%)}
+    header{background:#fff;box-shadow:0 2px 8px rgba(15,23,42,0.06);position:sticky;top:0;z-index:50}
+    .container{max-width:1100px;margin:0 auto;padding:24px}.nav{display:flex;gap:18px;align-items:center;justify-content:space-between}
+.brand{display:flex;gap:12px;align-items:center;font-weight:700}
+.brand .logo{width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#ff7043);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800}
+nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px}
+nav a.active, nav a:hover{background:var(--glass);color:var(--dark)}
+
+main{padding:40px 0}
+.hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center}
+.card{background:#fff;border-radius:12px;padding:20px;box-shadow:0 6px 18px rgba(16,24,40,0.06)}
+h1{font-size:28px;margin:0 0 12px}
+p.lead{color:var(--muted);margin:0 0 18px}
+
+.cta-row{display:flex;gap:12px}
+.btn{display:inline-block;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-outline{border:1px solid rgba(15,23,42,0.06);background:transparent;color:var(--dark)}
+
+/* Programs grid */
+.programs{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.program{padding:18px;border-radius:10px}
+.program h3{margin:0 0 8px}
+
+/* Forms */
+form{display:grid;gap:12px}
+label{font-size:13px;color:var(--muted)}
+input[type=text],input[type=email],input[type=tel],textarea,select{padding:10px;border-radius:8px;border:1px solid #e6e9ef;font-size:14px}
+textarea{min-height:120px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+
+footer{margin-top:40px;padding:24px 0;color:var(--muted)}
+
+/* Responsive */
+@media (max-width:880px){.hero{grid-template-columns:1fr}.brand span{display:none}.container{padding:16px}}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">R&amp;R</div>
+        <div>
+          <div style="font-weight:800">Rise &amp; Ring</div>
+          <div style="font-size:12px;color:var(--muted)">Boxing Club</div>
+        </div>
+      </div>
+      <nav id="site-nav">
+        <a href="#home" data-route="home" class="active">Home</a>
+        <a href="#programs" data-route="programs">Programs</a>
+        <a href="#about" data-route="about">About</a>
+        <a href="#donate" data-route="donate">Donations</a>
+        <a href="#register" data-route="register">Registrations</a>
+        <a href="#contact" data-route="contact">Contact</a>
+      </nav>
+    </div>
+  </header>  <main class="container">
+    <!-- HOME -->
+    <section id="home" class="page" data-title="Home">
+      <div class="hero">
+        <div>
+          <div class="card">
+            <h1>Train hard. Fight smart. Join the community.</h1>
+            <p class="lead">Rise &amp; Ring is a community-first boxing club offering programs for beginners, youth, fitness, and competitive athletes. Expert coaches, flexible schedules, and a supportive environment.</p>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="#register" data-route="register">Register Now</a>
+              <a class="btn btn-outline" href="#programs" data-route="programs">See Programs</a>
+            </div>
+          </div><div style="margin-top:18px" class="card">
+        <h3>Latest News</h3>
+        <p class="lead" style="margin-bottom:6px">New evening classes added for beginners on Mondays &amp; Wednesdays.</p>
+        <small style="color:var(--muted)">Updated: Nov 10, 2025</small>
+      </div>
+    </div>
+
+    <div>
+      <div class="card">
+        <h3>Quick Signup</h3>
+        <form id="quick-signup">
+          <input type="text" name="name" placeholder="Full name" required />
+          <input type="email" name="email" placeholder="Email" required />
+          <select name="program">
+            <option value="fitness">Fitness Boxing</option>
+            <option value="youth">Youth Program</option>
+            <option value="competitive">Competitive Boxers</option>
+          </select>
+          <button class="btn btn-primary" type="submit">Join Waitlist</button>
+          <small style="color:var(--muted)">We'll follow up by email about sessions and fees.</small>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:28px" class="card">
+    <h2 style="margin-top:0">Why boxing?</h2>
+    <p class="lead">Boxing builds cardio, coordination, strength, mental resilience and self-discipline. Our classes are inclusive and structured so anyone can begin, regardless of fitness level.</p>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section id="programs" class="page" style="display:none" data-title="Programs">
+  <div class="card">
+    <h2>Programs</h2>
+    <p class="lead">We offer multiple programs for different goals and ages.</p>
+    <div class="programs">
+      <div class="program card">
+        <h3>Fitness Boxing</h3>
+        <p>High-energy classes focused on conditioning, bag work, and mobility. Great for weight loss and stamina.</p>
+        <p><strong>When:</strong> Mon/Wed/Fri - 6:00PM</p>
+      </div>
+      <div class="program card">
+        <h3>Youth Development</h3>
+        <p>Age 10-16 program that teaches fundamentals, discipline and confidence. Non-contact drills until approved.</p>
+        <p><strong>When:</strong> Sat - 09:00AM</p>
+      </div>
+      <div class="program card">
+        <h3>Competitive Training</h3>
+        <p>For experienced boxers preparing for bouts. Focus on sparring, strategy, and strength &amp; conditioning.</p>
+        <p><strong>When:</strong> Tue/Thu - 7:00PM</p>
+      </div>
+      <div class="program card">
+        <h3>Private Coaching</h3>
+        <p>One-on-one sessions with our head coach. Bookings by appointment.</p>
+        <p><strong>Price:</strong> From $30 / session</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="page" style="display:none" data-title="About">
+  <div class="card">
+    <h2>About Rise &amp; Ring</h2>
+    <p class="lead">Founded to bring structured, affordable boxing to the community. Our coaches are certified and experienced in coaching youth and competitive athletes.</p>
+    <h3>Our Mission</h3>
+    <p>To empower people of all backgrounds through disciplined physical training and mentorship.</p>
+
+    <h3>Meet the Coaches</h3>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px">
+      <div style="flex:1 0 220px" class="card">
+        <h4>Coach Thabo</h4>
+        <p style="margin:6px 0">Head Coach — 12 years coaching, former national amateur competitor.</p>
+      </div>
+      <div style="flex:1 0 220px" class="card">
+        <h4>Coach Lindi</h4>
+        <p style="margin:6px 0">Youth &amp; Fitness Coach — specialist in conditioning and technique.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DONATIONS -->
+<section id="donate" class="page" style="display:none" data-title="Donations">
+  <div class="card">
+    <h2>Support the Club</h2>
+    <p class="lead">Donations help keep our youth programs running and ensure equipment and travel costs are covered for competitions.</p>
+
+    <div style="display:grid;gap:12px;max-width:520px">
+      <form id="donation-form">
+        <label>Donation amount (USD)</label>
+        <div class="two-col">
+          <input type="text" name="amount" placeholder="25" />
+          <select name="fund">
+            <option value="general">General Fund</option>
+            <option value="youth">Youth Programs</option>
+            <option value="equipment">Equipment</option>
+          </select>
+        </div>
+
+        <label>Choose a payment method</label>
+        <select name="method">
+          <option value="stripe">Credit/Debit (Stripe placeholder)</option>
+          <option value="paypal">PayPal</option>
+        </select>
+
+        <button class="btn btn-primary" type="submit">Donate</button>
+        <small style="color:var(--muted)">This form is a demo. Replace with your live Stripe/PayPal integration.</small>
+      </form>
+
+      <div class="card">
+        <h4>Offline donations</h4>
+        <p>Bank: Rise &amp; Ring CC<br/>Account: 123456789<br/>Branch: 000-111</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REGISTRATIONS -->
+<section id="register" class="page" style="display:none" data-title="Register">
+  <div class="card">
+    <h2>Registration</h2>
+    <p class="lead">Complete the form below to register. We'll email you confirmation and next steps.</p>
+
+    <form id="registration-form">
+      <div class="two-col">
+        <div>
+          <label>Full name</label>
+          <input type="text" name="name" required />
+        </div>
+        <div>
+          <label>Email</label>
+          <input type="email" name="email" required />
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div>
+          <label>Phone</label>
+          <input type="tel" name="phone" />
+        </div>
+        <div>
+          <label>Program</label>
+          <select name="program">
+            <option value="fitness">Fitness Boxing</option>
+            <option value="youth">Youth Development</option>
+            <option value="competitive">Competitive Training</option>
+            <option value="private">Private Coaching</option>
+          </select>
+        </div>
+      </div>
+
+      <label>Additional notes</label>
+      <textarea name="notes" placeholder="Medical notes, experience, availability..."></textarea>
+
+      <button type="submit" class="btn btn-primary">Submit Registration</button>
+    </form>
+
+    <div id="reg-success" style="display:none;margin-top:12px" class="card">
+      <strong>Thanks!</strong> Your registration has been received. We'll email you within 48 hours.
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="page" style="display:none" data-title="Contact">
+  <div class="card">
+    <h2>Contact Us</h2>
+    <p class="lead">Questions about programs, schedules, or donations? Reach out.</p>
+
+    <form id="contact-form">
+      <input type="text" name="name" placeholder="Full name" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <input type="tel" name="phone" placeholder="Phone (optional)" />
+      <textarea name="message" placeholder="How can we help?" required></textarea>
+      <button class="btn btn-primary" type="submit">Send Message</button>
+    </form>
+
+    <div style="margin-top:12px;color:var(--muted)">
+      <p><strong>Address:</strong> 12 Champion Rd, Johannesburg</p>
+      <p><strong>Email:</strong> hello@riseandring.example</p>
+      <p><strong>Phone:</strong> +27 11 555 0101</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
+    <div>© <span id="year"></span> Rise &amp; Ring. All rights reserved.</div>
+    <div style="color:var(--muted)">Built with ❤ — Visual Studio friendly</div>
+  </div>
+</footer>
+
+  </main>  <script>
+    // Simple client-side router to toggle page sections
+    const links = document.querySelectorAll('nav a');
+    const pages = document.querySelectorAll('.page');
+    function showRoute(route){
+      pages.forEach(p => p.style.display = (p.id === route) ? '' : 'none');
+      links.forEach(a => a.classList.toggle('active', a.dataset.route === route));
+      document.title = document.querySelector('#' + route).dataset.title + ' - Rise & Ring';
+      history.replaceState(null, '', '#' + route);
+    }
+    // initialize from hash
+    const initial = location.hash ? location.hash.slice(1) : 'home';
+    showRoute(initial);
+    // nav clicks
+    links.forEach(a => a.addEventListener('click', e => {
+      e.preventDefault();
+      showRoute(a.dataset.route);
+    }));
+
+    // Update year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Form handlers (demo only) - replace with server/API calls
+    document.getElementById('quick-signup').addEventListener('submit', e => {
+      e.preventDefault();
+      alert('Thanks! We added you to the waitlist.');
+      e.target.reset();
+    });
+
+    document.getElementById('registration-form').addEventListener('submit', e => {
+      e.preventDefault();
+      // example: gather form data and show success message
+      const data = new FormData(e.target);
+      console.log('Registration:', Object.fromEntries(data.entries()));
+      document.getElementById('reg-success').style.display = '';
+      e.target.reset();
+      // TODO: POST to your server endpoint (example: /api/register)
+    });
+
+    document.getElementById('contact-form').addEventListener('submit', e => {
+      e.preventDefault();
+      const data = new FormData(e.target);
+      console.log('Contact:', Object.fromEntries(data.entries()));
+      alert('Message sent — we will respond within 48 hours.');
+      e.target.reset();
+    });
+
+    document.getElementById('donation-form').addEventListener('submit', e => {
+      e.preventDefault();
+      const d = new FormData(e.target);
+      console.log('Donation:', Object.fromEntries(d.entries()));
+      alert('Donation process would continue with your payment provider (demo).');
+    });
+  </script></body>
+</html>

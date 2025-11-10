@@ -1,0 +1,71 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rise & Ring Boxing Club | Donations</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">R&amp;R</div>
+        <div>
+          <div class="brand-name">Rise &amp; Ring</div>
+          <div class="brand-sub">Boxing Club</div>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="programs.html">Programs</a>
+        <a href="about.html">About</a>
+        <a href="donations.html" class="active">Donations</a>
+        <a href="registration.html">Registrations</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>  <main class="container">
+    <section class="card">
+      <h2>Support the Club</h2>
+      <p class="lead">Your donations help fund youth training, equipment, and competition expenses. Every contribution makes a difference.</p><form id="donation-form" class="donation-form">
+    <label>Donation Amount (USD)</label>
+    <input type="text" name="amount" placeholder="e.g. 25" required />
+
+    <label>Donation Fund</label>
+    <select name="fund">
+      <option value="general">General Fund</option>
+      <option value="youth">Youth Programs</option>
+      <option value="equipment">Equipment</option>
+    </select>
+
+    <label>Payment Method</label>
+    <select name="method">
+      <option value="credit">Credit/Debit Card</option>
+      <option value="paypal">PayPal</option>
+    </select>
+
+    <button class="btn btn-primary" type="submit">Donate Now</button>
+  </form>
+
+  <div class="card offline-donation">
+    <h3>Offline Donations</h3>
+    <p>Bank: Rise &amp; Ring CC<br>Account: 123456789<br>Branch: 000-111</p>
+  </div>
+</section>
+
+  </main>  <footer>
+    <div class="container footer">
+      <div>© <span id="year"></span> Rise &amp; Ring. All rights reserved.</div>
+      <div>Built with ❤ — Visual Studio friendly</div>
+    </div>
+  </footer>  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('donation-form').addEventListener('submit', e => {
+      e.preventDefault();
+      alert('Thank you for supporting Rise & Ring Boxing Club!');
+      e.target.reset();
+    });
+  </script></body>
+</html>

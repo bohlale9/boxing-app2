@@ -1,0 +1,85 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rise & Ring Boxing Club | Registration</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">R&amp;R</div>
+        <div>
+          <div class="brand-name">Rise &amp; Ring</div>
+          <div class="brand-sub">Boxing Club</div>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="programs.html">Programs</a>
+        <a href="about.html">About</a>
+        <a href="donations.html">Donations</a>
+        <a href="registration.html" class="active">Registrations</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>  <main class="container">
+    <section class="card">
+      <h2>Registration</h2>
+      <p class="lead">Fill in the form below to join one of our boxing programs. We’ll contact you soon after submitting.</p><form id="registration-form" class="registration-form">
+    <div class="two-col">
+      <div>
+        <label>Full Name</label>
+        <input type="text" name="name" required />
+      </div>
+      <div>
+        <label>Email Address</label>
+        <input type="email" name="email" required />
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <label>Phone Number</label>
+        <input type="tel" name="phone" placeholder="e.g. 0712345678" />
+      </div>
+      <div>
+        <label>Choose Program</label>
+        <select name="program">
+          <option value="fitness">Fitness Boxing</option>
+          <option value="youth">Youth Development</option>
+          <option value="competitive">Competitive Training</option>
+          <option value="private">Private Coaching</option>
+        </select>
+      </div>
+    </div>
+
+    <label>Additional Notes</label>
+    <textarea name="notes" placeholder="Medical info, experience, availability..."></textarea>
+
+    <button type="submit" class="btn btn-primary">Submit Registration</button>
+  </form>
+
+  <div id="success-message" class="card" style="display:none; margin-top:20px;">
+    <strong>Thank you!</strong> Your registration has been submitted. We’ll be in touch shortly.
+  </div>
+</section>
+
+  </main>  <footer>
+    <div class="container footer">
+      <div>© <span id="year"></span> Rise &amp; Ring. All rights reserved.</div>
+      <div>Built with ❤ — Visual Studio friendly</div>
+    </div>
+  </footer>  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.getElementById('registration-form').addEventListener('submit', e => {
+      e.preventDefault();
+      document.getElementById('success-message').style.display = 'block';
+      e.target.reset();
+    });
+  </script></body>
+</html>
